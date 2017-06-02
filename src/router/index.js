@@ -7,17 +7,14 @@ import ProfilePage from '../page/profile/profile'
 Vue.use(Router)
 
 export default new Router({
-  routes: [
-    {
-      path: '/',
-      component: App,
-      children: [
-        {
-          path: '/profile',
-          component: ProfilePage
-        }
+    routes: [{
+        path: '/',
+        component: App,
+        children: [{
+                path: '/profile',
+                component: ProfilePage
+            }
 
-      ]
-    }
-  ]
+        ]
+    }]
 })
