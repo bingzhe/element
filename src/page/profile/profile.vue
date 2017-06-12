@@ -93,6 +93,7 @@ export default {
         font-weight: 700;
         @include sc(.8rem, $fc);
         .user-icon {
+          display: inline-block;
           @include wh(.5rem, .5rem);
           .icon-mobile{
             @include wh(100%, 100%)
