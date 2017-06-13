@@ -44,6 +44,22 @@
         </router-link>
       </section>
     </section>
+    <section class="info-data">
+      <ul class="clear">
+        <router-link to="/balance" tag="li" class="info-data-link">
+          <span class="info-data-top"><b>{{ parseInt(balance).toFixed(2)}}</b>元</span>
+          <span class="info-data-bottom">我的余额</span>
+        </router-link>
+        <router-link to="/benefit" tag="li" class="info-data-link">
+          <span class="info-data-top"><b>{{ count }}个</b></span>
+          <span class="info-data-bottom">我的优惠</span>
+        </router-link>
+        <router-link to="/points" tag="li" class="info-data-link">
+          <span class="info-data-top"><b>{{ pointNumber }}</b>分</span>
+          <span class="info-data-bottom">我的积分</span>
+        </router-link>
+      </ul>
+    </section>
     <foot-guide></foot-guide>
   </div>
 </template>
@@ -55,7 +71,11 @@ export default {
     return {
       avatar: '',     //头像地址
       username: '登录/注册',    //用户名
-      mobile: '暂无绑定手机号'   //电话号码
+      mobile: '暂无绑定手机号',   //电话号码
+      balance: 0.00,    //我的余额
+      count: 0,         //优惠券个数
+      pointNumber: 0    //头像地址
+
     }
   },
   components: {
@@ -112,6 +132,23 @@ export default {
       align-self: center;
       svg {
         @include wh(100%, 100%);
+      }
+    }
+  }
+}
+
+.info-data {
+  width: 100%;
+  background: $fc;
+  ul {
+    display: flex;
+    .info-data-link {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      align-items: center;
+      span {
+        @include sc(.55rem, #333);
       }
     }
   }
