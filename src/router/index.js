@@ -6,6 +6,9 @@ import Router from 'vue-router'
 import ProfilePage from '../page/profile/profile'
 import InfoPage from '../page/profile/children/info'
 import FindPage from '../page/find/find'
+import BalancePage from '../page/balance/balance'
+import BenefitPage from '../page/benefit/benefit'
+import PointsPage from '../page/points/points'
 Vue.use(Router)
 
 export default new Router({
@@ -23,8 +26,20 @@ export default new Router({
                 }]
             },
             {
-                path: '/find',
+                path: '/find', //发现页
                 component: FindPage
+            },
+            {
+                path: '/balance', //余额页
+                component: BalancePage
+            },
+            {
+                path: '/benefit',
+                component: BenefitPage
+            },
+            {
+                path: '/points',
+                component: PointsPage
             }
 
         ]

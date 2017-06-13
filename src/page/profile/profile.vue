@@ -47,15 +47,18 @@
     <section class="info-data">
       <ul class="clear">
         <router-link to="/balance" tag="li" class="info-data-link">
-          <span class="info-data-top"><b>{{ parseInt(balance).toFixed(2)}}</b>元</span>
+          <span class="info-data-top">
+            <b>{{ parseInt(balance).toFixed(2)}}</b>元</span>
           <span class="info-data-bottom">我的余额</span>
         </router-link>
         <router-link to="/benefit" tag="li" class="info-data-link">
-          <span class="info-data-top"><b>{{ count }}个</b></span>
+          <span class="info-data-top">
+            <b>{{ count }}</b>个</span>
           <span class="info-data-bottom">我的优惠</span>
         </router-link>
         <router-link to="/points" tag="li" class="info-data-link">
-          <span class="info-data-top"><b>{{ pointNumber }}</b>分</span>
+          <span class="info-data-top">
+            <b>{{ pointNumber }}</b>分</span>
           <span class="info-data-bottom">我的积分</span>
         </router-link>
       </ul>
@@ -86,7 +89,11 @@ export default {
 
 <style lang="scss" scoped>
 @import '../../style/mixin';
-
+#profile-page{
+  p, span {
+    font-family: Helvetica Neue,Tahoma,Arial;
+  }
+}
 .profile-number {
   padding-top: 1.95rem;
   .profile-link {
@@ -105,30 +112,39 @@ export default {
       }
     }
 
-    .user-info{
+    .user-info {
       margin-left: .48rem;
-      position: flex;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       flex-grow: 1;
-      p{
+      p {
         font-weight: 700;
         @include sc(.8rem, $fc);
         .user-icon {
           display: inline-block;
-          @include wh(.5rem, .5rem);
-          .icon-mobile{
+          @include wh(.5rem, .75rem);
+          line-height: .75rem;
+          .icon-mobile {
             @include wh(100%, 100%)
           }
         }
-        .icon-mobile-number{
+        .icon-mobile-number {
           display: inline-block;
           @include sc(.57333rem, $fc);
+          padding-left: .2rem;
         }
+      }
+
+      p:nth-child(2){
+        display: flex;
+        padding-top: .2rem;
       }
     }
 
-    .arrow{
+    .arrow {
       @include wh(.46667rem, .98rem);
-      display:inline-block;
+      display: inline-block;
       align-self: center;
       svg {
         @include wh(100%, 100%);
@@ -136,19 +152,45 @@ export default {
     }
   }
 }
-
+/*余额，优惠卷，积分*/
 .info-data {
-  width: 100%;
+  // width: 100%;
   background: $fc;
   ul {
     display: flex;
     .info-data-link {
+      border-right: 1px solid #f1f1f1;
       display: flex;
       flex-direction: column;
       flex-grow: 1;
       align-items: center;
-      span {
+      .info-data-top {
         @include sc(.55rem, #333);
+        padding: .853333rem 0 .453333rem 0;
+        b {
+          @include sc(1.2rem, #f90);
+          font-weight: 700;
+          line-height: 1rem;
+          font-family: Helvetica Neue, Tahoma;
+        }
+      }
+      .info-data-bottom {
+        @include sc(.57333rem, #666);
+        font-weight: 400;
+        padding-bottom: .453333rem;
+      }
+    }
+
+    .info-data-link:nth-child(2) {
+      b {
+        color: #ff5f3e;
+      }
+    }
+
+    .info-data-link:nth-child(3) {
+      border-right: 0;
+      b{
+        color: #6ac20b;
       }
     }
   }
