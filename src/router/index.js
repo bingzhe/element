@@ -9,6 +9,10 @@ import FindPage from '../page/find/find'
 import BalancePage from '../page/balance/balance'
 import BenefitPage from '../page/benefit/benefit'
 import PointsPage from '../page/points/points'
+import DownloadPage from '../page/download/download'
+import ServicePage from '../page/service/serice'
+import VipcardPage from '../page/vipcard/vipcard'
+import OrderPage from '../page/order/order'
 Vue.use(Router)
 
 export default new Router({
@@ -34,14 +38,29 @@ export default new Router({
                 component: BalancePage
             },
             {
-                path: '/benefit',
+                path: '/benefit', //优惠页
                 component: BenefitPage
             },
             {
-                path: '/points',
+                path: '/points', //积分页
                 component: PointsPage
+            },
+            {
+                path: '/download', //下载页
+                component: DownloadPage
+            },
+            {
+                path: '/service', //服务中心页
+                component: ServicePage
+            },
+            {
+                path: '/vipcard', //会员中心
+                component: VipcardPage
+            },
+            {
+                path: '/order', //我的订单页
+                component: OrderPage
             }
-
         ]
     }]
 })
