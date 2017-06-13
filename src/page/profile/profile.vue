@@ -109,6 +109,7 @@ export default {
     .arrow{
       @include wh(.46667rem, .98rem);
       display:inline-block;
+      align-self: center;
       svg {
         @include wh(100%, 100%);
       }
